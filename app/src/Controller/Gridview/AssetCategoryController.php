@@ -14,7 +14,7 @@ class AssetCategoryController extends AbstractCrudGridController
         return AssetCategory::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'asset_category',
@@ -24,7 +24,7 @@ class AssetCategoryController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => AssetCategory::class,

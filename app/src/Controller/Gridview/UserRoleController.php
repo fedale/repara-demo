@@ -14,7 +14,7 @@ class UserRoleController extends AbstractCrudGridController
         return UserRole::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'user_role',
@@ -24,7 +24,7 @@ class UserRoleController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => UserRole::class,

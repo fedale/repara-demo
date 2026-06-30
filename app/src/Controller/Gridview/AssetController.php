@@ -15,7 +15,7 @@ class AssetController extends AbstractCrudGridController
         return Asset::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'asset',
@@ -25,7 +25,7 @@ class AssetController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => Asset::class,

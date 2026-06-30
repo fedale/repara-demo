@@ -14,7 +14,7 @@ class CustomerTypeController extends AbstractCrudGridController
         return CustomerType::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'customer_type',
@@ -24,7 +24,7 @@ class CustomerTypeController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => CustomerType::class,

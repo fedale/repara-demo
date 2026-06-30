@@ -27,7 +27,7 @@ class AccessControlController extends AbstractCrudGridController
         return AccessControlEntity::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id' => 'access_control',
@@ -40,7 +40,7 @@ class AccessControlController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => AccessControlEntity::class,

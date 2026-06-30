@@ -60,7 +60,7 @@ class CustomerController extends AbstractCrudGridController
     }
 
     // Grid id default ("customer") derived from the entity short name.
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             // Responsive collapse: on narrow screens the least important columns
@@ -72,7 +72,7 @@ class CustomerController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => Customer::class,

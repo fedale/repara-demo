@@ -15,7 +15,7 @@ class CustomerLocationPlaceAssetAttachmentController extends AbstractCrudGridCon
         return CustomerLocationPlaceAssetAttachment::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'customer_location_place_asset_attachment',
@@ -25,7 +25,7 @@ class CustomerLocationPlaceAssetAttachmentController extends AbstractCrudGridCon
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => CustomerLocationPlaceAssetAttachment::class,

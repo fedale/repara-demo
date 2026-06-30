@@ -14,7 +14,7 @@ class WebsiteController extends AbstractCrudGridController
         return Website::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'website',
@@ -24,7 +24,7 @@ class WebsiteController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => Website::class,

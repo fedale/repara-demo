@@ -14,7 +14,7 @@ class UserGroupController extends AbstractCrudGridController
         return UserGroup::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'user_group',
@@ -24,7 +24,7 @@ class UserGroupController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => UserGroup::class,

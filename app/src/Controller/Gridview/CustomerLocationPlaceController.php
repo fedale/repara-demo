@@ -15,7 +15,7 @@ class CustomerLocationPlaceController extends AbstractCrudGridController
         return CustomerLocationPlace::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'customer_location_place',
@@ -25,7 +25,7 @@ class CustomerLocationPlaceController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => CustomerLocationPlace::class,

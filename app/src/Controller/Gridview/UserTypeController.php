@@ -14,7 +14,7 @@ class UserTypeController extends AbstractCrudGridController
         return UserType::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'user_type',
@@ -24,7 +24,7 @@ class UserTypeController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => UserType::class,

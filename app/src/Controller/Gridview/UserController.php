@@ -27,7 +27,7 @@ class UserController extends AbstractCrudGridController
         return User::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id' => 'user',
@@ -42,7 +42,7 @@ class UserController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => User::class,

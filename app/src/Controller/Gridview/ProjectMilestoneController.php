@@ -15,7 +15,7 @@ class ProjectMilestoneController extends AbstractCrudGridController
         return ProjectMilestone::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'project_milestone',
@@ -25,7 +25,7 @@ class ProjectMilestoneController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => ProjectMilestone::class,

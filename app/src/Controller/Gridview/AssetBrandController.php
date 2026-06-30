@@ -14,7 +14,7 @@ class AssetBrandController extends AbstractCrudGridController
         return AssetBrand::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'asset_brand',
@@ -24,7 +24,7 @@ class AssetBrandController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => AssetBrand::class,

@@ -15,7 +15,7 @@ class ProjectController extends AbstractCrudGridController
         return Project::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'project',
@@ -25,7 +25,7 @@ class ProjectController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => Project::class,

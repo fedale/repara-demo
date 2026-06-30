@@ -15,7 +15,7 @@ class ProjectTaskItemController extends AbstractCrudGridController
         return ProjectTaskItem::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'project_task_item',
@@ -25,7 +25,7 @@ class ProjectTaskItemController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => ProjectTaskItem::class,

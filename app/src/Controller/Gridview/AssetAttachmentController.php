@@ -16,7 +16,7 @@ class AssetAttachmentController extends AbstractCrudGridController
         return AssetAttachment::class;
     }
 
-    protected function configure(): array
+    protected function viewConfig(): array
     {
         return [
             'id'       => 'asset_attachment',
@@ -26,7 +26,7 @@ class AssetAttachmentController extends AbstractCrudGridController
         ];
     }
 
-    protected function getDataProviderConfig(): array
+    protected function dataConfig(): array
     {
         return [
             'models' => AssetAttachment::class,
