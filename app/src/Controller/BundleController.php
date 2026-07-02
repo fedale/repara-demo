@@ -203,9 +203,9 @@ class BundleController extends AbstractController
         */
         $dataProvider = [
             // 'queryBuilder' => $queryBuilder,
-            'models' => \App\Entity\Customer\Customer::class,
+            'model' => \App\Entity\Customer\Customer::class,
             'pagination' => $paginationAttributes,
-            'sort' => $sortAttributes
+            'sort' => ['map' => $sortAttributes],
         ];
 
         //$dataProvider->setQueryBuilder($queryBuilder);

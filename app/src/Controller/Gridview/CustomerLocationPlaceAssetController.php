@@ -29,12 +29,14 @@ class CustomerLocationPlaceAssetController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => CustomerLocationPlaceAsset::class,
+            'model' => CustomerLocationPlaceAsset::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['cpa.id'],   'desc' => ['cpa.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['cpa.name'], 'desc' => ['cpa.name'], 'default' => 'asc'],
-                'code' => ['asc' => ['cpa.code'], 'desc' => ['cpa.code'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['cpa.id'],   'desc' => ['cpa.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['cpa.name'], 'desc' => ['cpa.name'], 'default' => 'asc'],
+                    'code' => ['asc' => ['cpa.code'], 'desc' => ['cpa.code'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

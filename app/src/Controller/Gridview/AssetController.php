@@ -28,11 +28,13 @@ class AssetController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => Asset::class,
+            'model' => Asset::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['a.id'],   'desc' => ['a.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['a.name'], 'desc' => ['a.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['a.id'],   'desc' => ['a.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['a.name'], 'desc' => ['a.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

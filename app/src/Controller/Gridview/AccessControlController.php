@@ -43,7 +43,7 @@ class AccessControlController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => AccessControlEntity::class,
+            'model' => AccessControlEntity::class,
             'alias' => 'ac',
             'pagination' => ['defaultPageSize' => 20],
             // Applied to the fallback QueryBuilder (bundle repo has no search()).
@@ -55,10 +55,12 @@ class AccessControlController extends AbstractCrudGridController
                 'allow' => ['boolean', 'ac.allow'],
             ],
             'sort' => [
-                'id' => ['asc' => ['ac.id'], 'desc' => ['ac.id'], 'default' => 'desc'],
-                'name' => ['asc' => ['ac.name'], 'desc' => ['ac.name'], 'default' => 'asc'],
-                'path' => ['asc' => ['ac.path'], 'desc' => ['ac.path'], 'default' => 'asc'],
-                'sort' => ['asc' => ['ac.sort'], 'desc' => ['ac.sort'], 'default' => 'asc'],
+                'map' => [
+                    'id' => ['asc' => ['ac.id'], 'desc' => ['ac.id'], 'default' => 'desc'],
+                    'name' => ['asc' => ['ac.name'], 'desc' => ['ac.name'], 'default' => 'asc'],
+                    'path' => ['asc' => ['ac.path'], 'desc' => ['ac.path'], 'default' => 'asc'],
+                    'sort' => ['asc' => ['ac.sort'], 'desc' => ['ac.sort'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

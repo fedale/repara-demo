@@ -28,11 +28,13 @@ class CustomerLocationPlaceAssetAttachmentController extends AbstractCrudGridCon
     protected function dataConfig(): array
     {
         return [
-            'models' => CustomerLocationPlaceAssetAttachment::class,
+            'model' => CustomerLocationPlaceAssetAttachment::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['a.id'],   'desc' => ['a.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['a.name'], 'desc' => ['a.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['a.id'],   'desc' => ['a.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['a.name'], 'desc' => ['a.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

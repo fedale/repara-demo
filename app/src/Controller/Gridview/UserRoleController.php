@@ -27,16 +27,18 @@ class UserRoleController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => UserRole::class,
+            'model' => UserRole::class,
             'pagination' => ['defaultPageSize' => 20],
             // Self-referencing ManyToMany (parents/children) + inverse users:
             // keep them out of normalization to avoid circular references. The
             // 'children' control still binds directly to the entity in the form.
             'ignoredAttributes' => ['users', 'parents', 'children'],
             'sort' => [
-                'id'   => ['asc' => ['r.id'],   'desc' => ['r.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['r.name'], 'desc' => ['r.name'], 'default' => 'asc'],
-                'code' => ['asc' => ['r.code'], 'desc' => ['r.code'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['r.id'],   'desc' => ['r.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['r.name'], 'desc' => ['r.name'], 'default' => 'asc'],
+                    'code' => ['asc' => ['r.code'], 'desc' => ['r.code'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

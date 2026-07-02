@@ -27,15 +27,17 @@ class UserGroupController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => UserGroup::class,
+            'model' => UserGroup::class,
             'pagination' => ['defaultPageSize' => 20],
             // 'users' is the inverse side of a ManyToMany; its getter is used for
             // display only (membership is edited from the User grid), so keep it
             // out of the serializer to avoid eager-loading the whole relation.
             'ignoredAttributes' => ['users'],
             'sort' => [
-                'id'   => ['asc' => ['g.id'],   'desc' => ['g.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['g.name'], 'desc' => ['g.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['g.id'],   'desc' => ['g.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['g.name'], 'desc' => ['g.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

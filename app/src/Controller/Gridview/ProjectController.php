@@ -28,12 +28,14 @@ class ProjectController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => Project::class,
+            'model' => Project::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['p.id'],   'desc' => ['p.id'],   'default' => 'desc'],
-                'code' => ['asc' => ['p.code'], 'desc' => ['p.code'], 'default' => 'asc'],
-                'name' => ['asc' => ['p.name'], 'desc' => ['p.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['p.id'],   'desc' => ['p.id'],   'default' => 'desc'],
+                    'code' => ['asc' => ['p.code'], 'desc' => ['p.code'], 'default' => 'asc'],
+                    'name' => ['asc' => ['p.name'], 'desc' => ['p.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

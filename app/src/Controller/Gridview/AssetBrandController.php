@@ -27,11 +27,13 @@ class AssetBrandController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => AssetBrand::class,
+            'model' => AssetBrand::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['b.id'],   'desc' => ['b.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['b.name'], 'desc' => ['b.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['b.id'],   'desc' => ['b.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['b.name'], 'desc' => ['b.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

@@ -45,12 +45,14 @@ class UserController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => User::class,
+            'model' => User::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id' => ['asc' => ['u.id'], 'desc' => ['u.id'], 'default' => 'desc'],
-                'username' => ['asc' => ['u.username'], 'desc' => ['u.username'], 'default' => 'asc'],
-                'email' => ['asc' => ['u.email'], 'desc' => ['u.email'], 'default' => 'asc'],
+                'map' => [
+                    'id' => ['asc' => ['u.id'], 'desc' => ['u.id'], 'default' => 'desc'],
+                    'username' => ['asc' => ['u.username'], 'desc' => ['u.username'], 'default' => 'asc'],
+                    'email' => ['asc' => ['u.email'], 'desc' => ['u.email'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

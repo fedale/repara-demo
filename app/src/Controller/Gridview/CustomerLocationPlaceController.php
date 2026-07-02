@@ -28,11 +28,13 @@ class CustomerLocationPlaceController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => CustomerLocationPlace::class,
+            'model' => CustomerLocationPlace::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['p.id'],   'desc' => ['p.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['p.name'], 'desc' => ['p.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['p.id'],   'desc' => ['p.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['p.name'], 'desc' => ['p.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

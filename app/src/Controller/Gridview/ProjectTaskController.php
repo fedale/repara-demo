@@ -41,11 +41,13 @@ class ProjectTaskController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => ProjectTask::class,
+            'model' => ProjectTask::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['pt.id'],   'desc' => ['pt.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['pt.name'], 'desc' => ['pt.name'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['pt.id'],   'desc' => ['pt.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['pt.name'], 'desc' => ['pt.name'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

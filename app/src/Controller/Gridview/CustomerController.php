@@ -75,16 +75,18 @@ class CustomerController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => Customer::class,
+            'model' => Customer::class,
             'pagination' => ['defaultPageSize' => 20],
             // Not shown in the grid; their getters eager-load relations, so
             // keep them out of normalization. 'roles' and 'groups' are
             // fetch-joined in CustomerRepository::search() and displayed.
             'ignoredAttributes' => ['users'],
             'sort' => [
-                'id' => ['asc' => ['c.id'], 'desc' => ['c.id'], 'default' => 'desc'],
-                'active' => ['asc' => ['c.active'], 'desc' => ['c.active'], 'default' => 'asc'],
-                'username' => ['asc' => ['c.email'], 'desc' => ['c.email'], 'default' => 'asc'],
+                'map' => [
+                    'id' => ['asc' => ['c.id'], 'desc' => ['c.id'], 'default' => 'desc'],
+                    'active' => ['asc' => ['c.active'], 'desc' => ['c.active'], 'default' => 'asc'],
+                    'username' => ['asc' => ['c.email'], 'desc' => ['c.email'], 'default' => 'asc'],
+                ],
             ],
         ];
     }

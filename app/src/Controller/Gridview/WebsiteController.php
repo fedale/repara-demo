@@ -27,12 +27,14 @@ class WebsiteController extends AbstractCrudGridController
     protected function dataConfig(): array
     {
         return [
-            'models' => Website::class,
+            'model' => Website::class,
             'pagination' => ['defaultPageSize' => 20],
             'sort' => [
-                'id'   => ['asc' => ['w.id'],   'desc' => ['w.id'],   'default' => 'desc'],
-                'name' => ['asc' => ['w.name'], 'desc' => ['w.name'], 'default' => 'asc'],
-                'sort' => ['asc' => ['w.sort'], 'desc' => ['w.sort'], 'default' => 'asc'],
+                'map' => [
+                    'id'   => ['asc' => ['w.id'],   'desc' => ['w.id'],   'default' => 'desc'],
+                    'name' => ['asc' => ['w.name'], 'desc' => ['w.name'], 'default' => 'asc'],
+                    'sort' => ['asc' => ['w.sort'], 'desc' => ['w.sort'], 'default' => 'asc'],
+                ],
             ],
         ];
     }
