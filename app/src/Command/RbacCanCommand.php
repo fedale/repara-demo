@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
- * Tests can() for a real user by SIMULATING their token: unlike rbac:check
+ * Tests can() for a real user by SIMULATING their token: unlike fedale:rbac:check
  * (static, auth_assignment only), it exercises the whole path — direct
  * assignments + token roles + hierarchy + rules + super-admin.
  *
