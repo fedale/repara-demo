@@ -8,18 +8,21 @@ fedale_gridview:
     client_domain: Gridview
     lang_switcher: false
 
+  # The former `defaults.options` bag was dissolved into topic siblings:
+  # `display` (look & text), `behavior` (interaction) and `integration`.
   defaults:
-    options:
+    display:
       emptyText: "No records found"
-      useTurbo: true
       showThead: true
       showTfoot: true
-      maxQueryLength: 8000
       # layout:
-      #   gridview: "{header} {table} {footer}"
+      #   shell:    "{header} {dataview} {footer}"
       #   header:   "{globalSearch}"
-      #   table:    "{thead} {filter} {tbody} {tfoot}"
+      #   dataview: "{thead} {filter} {tbody} {tfoot}"
       #   footer:   "{pagination}"
+    behavior:
+      useTurbo: true
+      maxQueryLength: 8000
     attributes: {}
 #     class: "table table-striped"
 #     container:
@@ -32,15 +35,16 @@ fedale_gridview:
     # full CRUD grid (UserController extends AbstractCrudGridController), so its
     # writes publish the signal.
     user:
-      options:
+      behavior:
         realtime:
           enabled: true
 #   customer_list:
-#     options:
+#     behavior:
 #       globalSearch: ["c.code", "c.email"]
+#     display:
 #       layout:
-#         table: "{tbody}"                    # solo body, niente thead/filter/tfoot
-#         footer: "{pagination}"
+#         dataview: "{tbody}"                  # body only, no thead/filter/tfoot
+#         footer:   "{pagination}"
 #       templates:
 #         header: "@App/gridview/custom_header.html.twig"
 #     attributes:
