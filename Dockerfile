@@ -15,13 +15,12 @@ RUN apt update \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && pecl install apcu \
-    && pecl install redis mongodb \
+    && pecl install redis \
     && pecl clear-cache \
     && docker-php-ext-enable pdo_pgsql \
     && docker-php-ext-enable apcu \
     && docker-php-ext-enable opcache \
     && docker-php-ext-enable redis \
-    && docker-php-ext-enable mongodb \
     && docker-php-ext-install zip \
     && docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pgsql
