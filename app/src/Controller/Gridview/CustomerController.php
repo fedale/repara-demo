@@ -314,11 +314,11 @@ class CustomerController extends AbstractCrudGridController
                 'buttons' => [
                     'edit' => fn(array $row) => CrudButton::edit(
                         $this->generateUrl($this->routeName('update'), ['id' => $row['id']]),
-                        $this->config('mode')
+                        $this->config('form.mode') ?? 'modal'
                     ),
                     'clone' => fn(array $row) => CrudButton::clone(
                         $this->generateUrl($this->routeName('clone'), ['id' => $row['id']]),
-                        $this->config('mode')
+                        $this->config('form.mode') ?? 'modal'
                     ),
                     'delete' => fn(array $row) => CrudButton::delete(
                         $this->generateUrl($this->routeName('delete'), ['id' => $row['id']])
