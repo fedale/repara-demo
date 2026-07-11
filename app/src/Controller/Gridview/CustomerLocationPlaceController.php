@@ -18,6 +18,7 @@ class CustomerLocationPlaceController extends AbstractCrudGridController
     protected function viewConfig(): array
     {
         return [
+            'form' => ['theme' => null], // repara-demo sets a global twig.form_themes (bootstrap_5_horizontal_layout.html.twig); defer to it instead of the bundle's own gv_form_theme.html.twig default.
             'id'       => 'customer_location_place',
             'title'    => 'Locale sede',
             'addLabel' => 'Nuovo locale',

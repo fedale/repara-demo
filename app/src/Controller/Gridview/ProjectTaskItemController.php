@@ -18,6 +18,7 @@ class ProjectTaskItemController extends AbstractCrudGridController
     protected function viewConfig(): array
     {
         return [
+            'form' => ['theme' => null], // repara-demo sets a global twig.form_themes (bootstrap_5_horizontal_layout.html.twig); defer to it instead of the bundle's own gv_form_theme.html.twig default.
             'id'       => 'project_task_item',
             'title'    => 'Voce attività',
             'addLabel' => 'Nuova voce',

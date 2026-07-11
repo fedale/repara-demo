@@ -19,6 +19,7 @@ class CustomerLocationPlaceAssetController extends AbstractCrudGridController
     protected function viewConfig(): array
     {
         return [
+            'form' => ['theme' => null], // repara-demo sets a global twig.form_themes (bootstrap_5_horizontal_layout.html.twig); defer to it instead of the bundle's own gv_form_theme.html.twig default.
             'id'       => 'customer_location_place_asset',
             'title'    => 'Asset installato',
             'addLabel' => 'Nuovo asset installato',
